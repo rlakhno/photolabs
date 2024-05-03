@@ -30,7 +30,7 @@ const PhotoListItem = ({ imageSource, username, profile, location, id }) => {
           </div>
         </div>
       </div>
-      <p className="photo-list__id">ID: {id}</p>
+      <p>ID: {id}</p>
     </div>
   );
 };
