@@ -2,6 +2,7 @@ import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
 import PhotoList from './components/PhotoList';
+import PhotoFavButton from './components/PhotoFavButton';
 import './App.scss';
 
 
@@ -26,15 +27,19 @@ const photos = Array.from({ length: numPhotos }, (_, index) => index);
 const App = () => {
   return (
     <div className="App">
+
       {photos.map((index) => (
-        <PhotoListItem
-          key={index} 
-          id={sampleDataForPhotoListItem.id}
-          location={sampleDataForPhotoListItem.location}
-          imageSource={sampleDataForPhotoListItem.imageSource}
-          username={sampleDataForPhotoListItem.username}
-          profile={sampleDataForPhotoListItem.profile}
-        />
+        <div key={`photo-${index}`}>
+          <PhotoFavButton key={`fav-${index}`} />
+          <PhotoListItem
+            key={`item-${index}`}
+            id={sampleDataForPhotoListItem.id}
+            location={sampleDataForPhotoListItem.location}
+            imageSource={sampleDataForPhotoListItem.imageSource}
+            username={sampleDataForPhotoListItem.username}
+            profile={sampleDataForPhotoListItem.profile}
+          />
+        </div>
       ))}
     </div>
 
