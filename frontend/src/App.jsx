@@ -30,7 +30,7 @@ const App = () => {
 
       {photos.map((index) => (
         <div key={`photo-${index}`}>
-          <PhotoFavButton key={`fav-${index}`} />
+          {/* <PhotoFavButton key={`fav-${index}`} /> */}
           <PhotoListItem
             key={`item-${index}`}
             id={sampleDataForPhotoListItem.id}
