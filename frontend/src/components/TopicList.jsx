@@ -5,7 +5,7 @@ import TopicListItem from './TopicListItem';
 import topics from '../mocks/topics';
 
 
-const TopicList = () => {
+const TopicList = ({topics}) => {
   return (
     <div className="top-nav-bar__topic-list">
       {topics.map((item) => (
