@@ -1,9 +1,8 @@
 import React from 'react';
 
-// import PhotoListItem from './components/PhotoListItem';
+import TopNavigationBar from './components/TopNavigationBar';
 import PhotoList from './components/PhotoList';
-// import PhotoFavButton from './components/PhotoFavButton';
-import TopicList from './components/TopicList';
+
 import './App.scss';
 
 
@@ -18,21 +17,8 @@ const numPhotos = 3;
 const App = () => {
   return (
     <div className="App">
-      <TopicList />
+      <TopNavigationBar />
 
-      {/* {photos.map((index) => (
-        <div key={`photo-${index}`}>
-          <PhotoListItem
-            key={`item-${index}`}
-            id={sampleDataForPhotoListItem.id}
-            location={sampleDataForPhotoListItem.location}
-            imageSource={sampleDataForPhotoListItem.imageSource}
-            username={sampleDataForPhotoListItem.username}
-            profile={sampleDataForPhotoListItem.profile}
-          />
-          
-        </div>
-      ))} */}
       <PhotoList />
     </div>
 
