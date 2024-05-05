@@ -3,6 +3,7 @@ import React from 'react';
 // import PhotoListItem from './components/PhotoListItem';
 import PhotoList from './components/PhotoList';
 // import PhotoFavButton from './components/PhotoFavButton';
+import TopicList from './components/TopicList';
 import './App.scss';
 
 
@@ -17,6 +18,7 @@ const numPhotos = 3;
 const App = () => {
   return (
     <div className="App">
+      <TopicList />
 
       {/* {photos.map((index) => (
         <div key={`photo-${index}`}>
