@@ -8,7 +8,7 @@ import "../styles/TopicListItem.scss";
 //   label: "Nature",
 // };
 
-const TopicListItem = ({key, id, slug, title}) => {
+const TopicListItem = ({id, slug, title}) => {
 
   console.log("title: ", title);
 
