@@ -24,7 +24,7 @@ const App = () => {
         topics={mockTopicData} 
         setDisplayModal={setDisplayModal} // Pass the setDisplayModal function
         />
-        {displayModal && <PhotoDetailsModal />}
+        {displayModal && <PhotoDetailsModal setDisplayModal={setDisplayModal}/>}
       </div>
     </FavouritesProvider>
 
