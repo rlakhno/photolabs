@@ -1,3 +1,5 @@
+
+// PhotoList.jsx
 import React from "react";
 
 import "../styles/PhotoList.scss";
@@ -5,7 +7,7 @@ import PhotoListItem from "./PhotoListItem";
 
 
 
-const PhotoList = ({ photos, favourites, addFavourite, removeFavourite }) => {
+const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDisplayModal  }) => {
   const handleFavouriteToggle = (photoId) => {
     const isFavourited = favourites.some((favourite) => favourite.id === photoId);
     if (isFavourited) {
@@ -15,6 +17,11 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite }) => {
       addFavourite(photo);
     }
   };
+
+  const handlePhotoClick = () => {
+    // Display modal when a photo is clicked
+    setDisplayModal(true);
+  }
  
   return (
     <ul className="photo-list">
@@ -28,6 +35,7 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite }) => {
           profile={item.user.profile}
           isFavourited={favourites.some((favourite) => favourite.id === item.id)}
           onFavouriteToggle={handleFavouriteToggle}
+          onClick={handlePhotoClick}
         />
       ))}
     </ul>

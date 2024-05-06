@@ -1,4 +1,6 @@
-import React from 'react';
+
+// App.jsx
+import React, { useState } from 'react';
 
 import { FavouritesProvider } from './FavouritesContext';
 import HomeRoute from './routes/HomeRoute';
@@ -13,12 +15,16 @@ import './App.scss';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
+  const [displayModal, setDisplayModal] = useState(false); // State for modal visibility
   return (
     <FavouritesProvider>
       <div className="App">
-
-        <HomeRoute photos={mockPhotoData} topics={mockTopicData} />
-        <PhotoDetailsModal />
+        <HomeRoute 
+        photos={mockPhotoData} 
+        topics={mockTopicData} 
+        setDisplayModal={setDisplayModal} // Pass the setDisplayModal function
+        />
+        {displayModal && <PhotoDetailsModal />}
       </div>
     </FavouritesProvider>
 

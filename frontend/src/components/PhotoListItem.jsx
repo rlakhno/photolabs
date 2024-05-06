@@ -1,19 +1,23 @@
+
 // PhotoListItem.jsx
 
 import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
 
-const PhotoListItem = ({ id, imageSource, username, profile, location, isFavourited, onFavouriteToggle }) => {
+const PhotoListItem = ({ id, imageSource, username, profile, location, isFavourited, onFavouriteToggle, onClick }) => {
   const handleFavouriteClick = (photoId) => {
-   
-    onFavouriteToggle(photoId); 
-    
+
+    onFavouriteToggle(photoId);
+
   };
 
   return (
-    <div className="photo-list__item">
-      <PhotoFavButton isFavourited={isFavourited} handleFavouriteClick={handleFavouriteClick} photoId={id}/>
+    <div className="photo-list__item" onClick={onClick}>
+      <PhotoFavButton
+        isFavourited={isFavourited}
+        handleFavouriteClick={handleFavouriteClick}
+        photoId={id} />
       <img
         className="photo-list__image"
         src={imageSource}

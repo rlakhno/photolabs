@@ -1,3 +1,5 @@
+
+// HomeRoute.jsx
 import React from 'react';
 import { useState } from 'react';
 
@@ -6,7 +8,7 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import { useFavourites } from '../FavouritesContext';
 
-const HomeRoute = ({ photos, topics}) => {
+const HomeRoute = ({ photos, topics, setDisplayModal }) => {
 
   const { favourites, addFavourite, removeFavourite } = useFavourites();
   return (
@@ -18,6 +20,7 @@ const HomeRoute = ({ photos, topics}) => {
         favourites={favourites}
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
+        setDisplayModal={setDisplayModal}
       />
     </div>
   );
