@@ -24,6 +24,7 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDispl
     setPhotoId(photoId);
   }
   
+  // console.log("PHOTOS: ", photos);
  
   return (
     <ul className="photo-list">
@@ -37,7 +38,7 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDispl
           profile={item.user.profile}
           isFavourited={favourites.some((favourite) => favourite.id === item.id)}
           onFavouriteToggle={handleFavouriteToggle}
-          onClick={handlePhotoClick}
+          onPhotoClick={handlePhotoClick}
         />
       ))}
     </ul>

@@ -5,15 +5,16 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
 
-const PhotoListItem = ({ id, imageSource, username, profile, location, isFavourited, onFavouriteToggle, onClick }) => {
+const PhotoListItem = ({ id, imageSource, username, profile, location, isFavourited, onFavouriteToggle, onPhotoClick }) => {
   const handleFavouriteClick = (photoId) => {
 
     onFavouriteToggle(photoId);
 
   };
 
+  // console.log("location: ", location);
   return (
-    <div className="photo-list__item" onClick={() => onClick(id)}>
+    <div className="photo-list__item" onClick={() => onPhotoClick(id)}>
       <PhotoFavButton
         isFavourited={isFavourited}
         handleFavouriteClick={handleFavouriteClick}
