@@ -8,10 +8,11 @@ import PhotoFavButton from './PhotoFavButton';
 
 
 const PhotoListItem = ({ imageSource, username, profile, location, id }) => {
+  const photo = { imageSource, username, profile, location, id };
 
   return (
     <div className="photo-list__item">
-      <PhotoFavButton />
+      <PhotoFavButton photo={photo}/>
       <img className="photo-list__image "
         src={imageSource}
         alt={`Photo by ${username}`}
