@@ -13,7 +13,7 @@ const PhotoListItem = ({ id, imageSource, username, profile, location, isFavouri
   };
 
   return (
-    <div className="photo-list__item" onClick={onClick}>
+    <div className="photo-list__item" onClick={() => onClick(id)}>
       <PhotoFavButton
         isFavourited={isFavourited}
         handleFavouriteClick={handleFavouriteClick}
@@ -41,3 +41,4 @@ const PhotoListItem = ({ id, imageSource, username, profile, location, isFavouri
 };
 
 export default PhotoListItem;
+// onClick={() => handleFavouriteClick(photoId)}

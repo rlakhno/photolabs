@@ -1,7 +1,6 @@
 // frontend/src/components/PhotoFavButton.jsx
 
-import React, { useCallback, useState } from 'react';
-import { useFavourites } from '../FavouritesContext';
+import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 

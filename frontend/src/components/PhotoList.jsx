@@ -7,7 +7,7 @@ import PhotoListItem from "./PhotoListItem";
 
 
 
-const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDisplayModal  }) => {
+const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDisplayModal, setPhotoId }) => {
   const handleFavouriteToggle = (photoId) => {
     const isFavourited = favourites.some((favourite) => favourite.id === photoId);
     if (isFavourited) {
@@ -18,10 +18,12 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite, setDispl
     }
   };
 
-  const handlePhotoClick = () => {
+  const handlePhotoClick = (photoId) => {
     // Display modal when a photo is clicked
     setDisplayModal(true);
+    setPhotoId(photoId);
   }
+  
  
   return (
     <ul className="photo-list">

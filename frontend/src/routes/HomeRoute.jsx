@@ -8,7 +8,7 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import { useFavourites } from '../FavouritesContext';
 
-const HomeRoute = ({ photos, topics, setDisplayModal }) => {
+const HomeRoute = ({ photos, topics, setDisplayModal, setPhotoId }) => {
 
   const { favourites, addFavourite, removeFavourite } = useFavourites();
   return (
@@ -21,6 +21,7 @@ const HomeRoute = ({ photos, topics, setDisplayModal }) => {
         addFavourite={addFavourite}
         removeFavourite={removeFavourite}
         setDisplayModal={setDisplayModal}
+        setPhotoId={setPhotoId}
       />
     </div>
   );

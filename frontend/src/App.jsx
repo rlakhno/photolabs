@@ -16,15 +16,20 @@ import './App.scss';
 // Note: Rendering a single component to build components in isolation
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false); // State for modal visibility
+  const [photoId, setPhotoId] = useState(); // State for modal visibility
   return (
     <FavouritesProvider>
       <div className="App">
-        <HomeRoute 
-        photos={mockPhotoData} 
-        topics={mockTopicData} 
-        setDisplayModal={setDisplayModal} // Pass the setDisplayModal function
+        <HomeRoute
+          photos={mockPhotoData}
+          topics={mockTopicData}
+          setDisplayModal={setDisplayModal} // Pass the setDisplayModal function
+          setPhotoId={setPhotoId}
         />
-        {displayModal && <PhotoDetailsModal setDisplayModal={setDisplayModal}/>}
+        {displayModal && <PhotoDetailsModal
+          setDisplayModal={setDisplayModal}
+          photoId={photoId}
+          photos={mockPhotoData} />}
       </div>
     </FavouritesProvider>
 
