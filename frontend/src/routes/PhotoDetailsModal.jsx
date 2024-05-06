@@ -25,7 +25,6 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
   }
 
   const photo = photos.find((photo) => photo.id === photoId);
-  // addFavourite(photo);
   const valuesArray = Object.values(photo.similar_photos);
   console.log("Photo Info: ", valuesArray);
 
@@ -38,12 +37,12 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
       <div>
         <PhotoFavButton
           isFavourited={favourites.some((favourite) => favourite.id === photo.id)}
-          // handleFavouriteClick={handleFavouriteClick}
+          handleFavouriteClick={handleFavouriteToggle}
           photoId={photo.id}
         />
         <img
           className="photo-details-modal__image"
-          src={photo.urls.regular}
+          src={photo.urls.full }
           alt={`Photo by ${photo.user.name}`}
         />
         <div className="photo-details-modal__photographer-details">
@@ -66,7 +65,7 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
           <p>Similar Photos</p>
         </span>
       </div>
-      <PhotoList photos={valuesArray} favourites={favourites}/>
+      <PhotoList photos={valuesArray} favourites={favourites} addFavourite={addFavourite} removeFavourite={removeFavourite}/>
     </div>
   )
 };
