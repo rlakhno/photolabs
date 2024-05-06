@@ -15,8 +15,7 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite }) => {
       addFavourite(photo);
     }
   };
-  console.log("item.id: ", photos[0].id);
-  console.log("favourites: ", favourites);
+ 
   return (
     <ul className="photo-list">
       {photos.map((item) => (
