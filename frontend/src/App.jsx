@@ -16,10 +16,9 @@ const App = () => {
     state,
     updateToFavPhotoIds,
     setPhotoSelected,
-    onClosePhotoDetailsModal,
   } = useApplicationData();
 
-  const { photos, topics, isPhotoDetailsModalOpen, selectedPhoto } = state;
+  const { photos, topics, selectedPhoto } = state;
 
   return (
     <FavouritesProvider>
@@ -28,13 +27,12 @@ const App = () => {
           photos={photos}
           topics={topics}
           setPhotoSelected={setPhotoSelected}
-          isPhotoDetailsModalOpen={isPhotoDetailsModalOpen}
-          onClosePhotoDetailsModal={onClosePhotoDetailsModal}
         />
-        {isPhotoDetailsModalOpen && (
+        {!!selectedPhoto && (
           <PhotoDetailsModal
-            photo={selectedPhoto}
-            onClose={onClosePhotoDetailsModal}
+            setPhotoSelected={setPhotoSelected}
+            photos={photos}
+            selectedPhoto={selectedPhoto}
           />
         )}
       </div>
@@ -43,29 +41,3 @@ const App = () => {
 };
 
 export default App;
-
-//----------------------------------------
-// // Note: Rendering a single component to build components in isolation
-// const App = () => {
-//   const [displayModal, setDisplayModal] = useState(false); // State for modal visibility
-//   const [photoId, setPhotoId] = useState(); // State for modal visibility
-//   return (
-//     <FavouritesProvider>
-//       <div className="App">
-//         <HomeRoute
-//           photos={mockPhotoData}
-//           topics={mockTopicData}
-//           setDisplayModal={setDisplayModal} // Pass the setDisplayModal function
-//           setPhotoId={setPhotoId}
-//         />
-//         {displayModal && <PhotoDetailsModal
-//           setDisplayModal={setDisplayModal}
-//           photoId={photoId}
-//           photos={mockPhotoData} />}
-//       </div>
-//     </FavouritesProvider>
-
-//   );
-// };
-
-// export default App;

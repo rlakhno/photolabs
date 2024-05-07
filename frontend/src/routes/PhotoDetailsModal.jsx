@@ -6,7 +6,7 @@ import PhotoList from 'components/PhotoList';
 import PhotoFavButton from 'components/PhotoFavButton';
 import { useFavourites } from '../FavouritesContext';
 
-const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
+const PhotoDetailsModal = ({ setPhotoSelected, photos, selectedPhoto }) => {
 
   const { favourites, addFavourite, removeFavourite } = useFavourites();
   const handleFavouriteToggle = (photoId) => {
@@ -20,13 +20,14 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
   };
 
   const handlePhotoClose = () => {
-    // Remove modal when a close-button is clicked
-    setDisplayModal(false);
+    
+    setPhotoSelected(null);
+
   }
 
-  const photo = photos.find((photo) => photo.id === photoId);
-  const valuesArray = Object.values(photo.similar_photos);
-  console.log("Photo Info: ", valuesArray);
+ 
+  const valuesArray = Object.values(selectedPhoto.similar_photos);
+ 
 
   return (
     <div className="photo-details-modal">
@@ -36,26 +37,26 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
 
       <div className='photo-details-modal__images'>
         <PhotoFavButton
-          isFavourited={favourites.some((favourite) => favourite.id === photo.id)}
+          isFavourited={favourites.some((favourite) => favourite.id === selectedPhoto.id)}
           handleFavouriteClick={handleFavouriteToggle}
-          photoId={photo.id}
+          photoId={selectedPhoto.id}
         />
         <img
           className="photo-details-modal__image"
-          src={photo.urls.full }
-          alt={`Photo by ${photo.user.name}`}
+          src={selectedPhoto.urls.full }
+          alt={`Photo by ${selectedPhoto.user.name}`}
         />
         <div className="photo-details-modal__photographer-details">
 
           <img
             className="photo-details-modal__photographer-profile"
-            src={photo.user.profile}
-            alt={`Profile of ${photo.user.username}`}
+            src={selectedPhoto.user.profile}
+            alt={`Profile of ${selectedPhoto.user.username}`}
           />
           <div className="photo-details-modal__photographer-info">
-            <p>{photo.user.name}</p>
+            <p>{selectedPhoto.user.name}</p>
             <p className="photo-details-modal__photographer-location">
-              {photo.location.city}, {photo.location.country}
+              {selectedPhoto.location.city}, {selectedPhoto.location.country}
             </p>
           </div>
         </div>
