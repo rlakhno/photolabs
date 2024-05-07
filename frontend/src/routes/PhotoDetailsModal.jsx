@@ -34,7 +34,7 @@ const PhotoDetailsModal = ({ setDisplayModal, photoId, photos }) => {
         <img src={closeSymbol} alt="close symbol" />
       </button>
 
-      <div>
+      <div className='photo-details-modal__images'>
         <PhotoFavButton
           isFavourited={favourites.some((favourite) => favourite.id === photo.id)}
           handleFavouriteClick={handleFavouriteToggle}
