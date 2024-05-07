@@ -50,8 +50,8 @@ const reducer = (state, action) => {
 const useApplicationData = () => {
   // Initialize state using useReducer
   const [state, dispatch] = useReducer(reducer, {
-    photos: {},
-    topics: {},
+    photos: mockPhotoData,
+    topics: mockTopicData,
     favPhotoIds: [],
     selectedPhoto: null,
   });
@@ -69,7 +69,6 @@ const useApplicationData = () => {
     dispatch({ type: ACTIONS.SELECT_PHOTO, payload: { photo } });
   };
 
-  // You can add more actions here...
 
   return {
     state,
@@ -86,7 +85,7 @@ export default useApplicationData;
 
 
 
-// ------------------------------
+// // ------------------------------
 
 // import { useState } from 'react';
 // import mockPhotoData from '../mocks/photos';

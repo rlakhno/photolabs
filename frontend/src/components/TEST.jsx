@@ -1,36 +1,58 @@
-import React from "react";
-import "../styles/PhotoListItem.scss";
-import PhotoFavButton from './PhotoFavButton';
 
-const PhotoListItem = ({ id, imageSource, username, profile, location, isFavourited, onFavouriteToggle }) => {
-  const handleFavouriteClick = (e) => {
-    e.stopPropagation(); // Prevents event propagation to the parent (PhotoListItem) when the button is clicked
-    onFavouriteToggle(); // Calls the onFavouriteToggle function passed from PhotoList
+// ------------------------------
+
+import { useState } from 'react';
+import mockPhotoData from '../mocks/photos';
+import mockTopicData from '../mocks/topics';
+
+
+const useApplicationData = () => {
+  const [state, setState] = useState({
+    // Define your initial state here
+    photos: {},
+    topics: {},
+    favPhotoIds: [],
+    selectedPhoto: null,
+  });
+
+  const updateToFavPhotoIds = (newFavPhotoIds) => {
+    setState((prevState) => ({
+      ...prevState,
+      favPhotoIds: newFavPhotoIds,
+    }));
   };
 
-  return (
-    <div className="photo-list__item">
-      <PhotoFavButton isFavourited={isFavourited} onClick={handleFavouriteClick} />
-      <img
-        className="photo-list__image"
-        src={imageSource}
-        alt={`Photo by ${username}`}
-      />
-      <div className="photo-list__user-details">
-        <img
-          className="photo-list__user-profile"
-          src={profile}
-          alt={`Profile of ${username}`}
-        />
-        <div className="photo-list__user-info">
-          <p>{username}</p>
-          <p className="photo-list__user-location">
-            {location.city}, {location.country}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  const setPhotoSelected = (photo) => {
+    setState((prevState) => ({
+      ...prevState,
+      selectedPhoto: photo,
+    }));
+  };
+
+
+  // Load initial data from API or mocks
+  // Example of loading mock data
+  const loadInitialData = () => {
+ 
+
+    setState({
+      ...state,
+      photos: mockPhotoData,
+      topics: mockTopicData,
+    });
+  };
+
+  // Call loadInitialData when the component mounts
+  useState(() => {
+    loadInitialData();
+  }, []); // Empty dependency array means it runs only once on mount
+
+  return {
+    state,
+    updateToFavPhotoIds,
+    setPhotoSelected,
+  };
 };
 
-export default PhotoListItem;
+export default useApplicationData;
+
