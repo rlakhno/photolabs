@@ -72,30 +72,32 @@ npm start
 --------------------------------------
 
 
-*** Enlarged Image with Similar Images***
+***Enlarged Image with Similar Images***
 
 ![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/inlarged_picture.png)
 
 --------------------------------------
 
 
-*** Liked Notification***
+***Liked Notification***
 
 ![MLiked Notification](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/like_notification.png)
 
 --------------------------------------
 
 
-*** View by Topic "Travel"***
+***View by Topic Travel***
 
 ![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/pics_by_topic_id_travel.png)
 
 --------------------------------------
 
 
-*** Backend API by Topic id = 3 ***
+***Backend API by Topic id = 3***
 
 ![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/backend_topic_id_3.png)
+
+--------------------------------------
 
 
 ## API Endpoints
