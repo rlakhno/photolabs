@@ -65,11 +65,12 @@ npm start
 
 ## Screenshots of the Final Product
 
-*** Main Page***
+***Main Page***
 
 ![Main Page](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/main_page.png)
 
 --------------------------------------
+
 
 
 ***Enlarged Image with Similar Images***
@@ -79,11 +80,13 @@ npm start
 --------------------------------------
 
 
+
 ***Liked Notification***
 
 ![MLiked Notification](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/like_notification.png)
 
 --------------------------------------
+
 
 
 ***View by Topic Travel***
@@ -93,11 +96,13 @@ npm start
 --------------------------------------
 
 
+
 ***Backend API by Topic id = 3***
 
 ![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/backend_topic_id_3.png)
 
 --------------------------------------
+
 
 
 ## API Endpoints
