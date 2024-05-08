@@ -17,39 +17,40 @@ PhotoLab is a React-based web application that allows users to view and interact
 
 To run this project locally, follow these steps:
 
-1. Clone the repository:
+***1. Clone the repository onto your local device:***
    ```bash
    git clone git@github.com:rlakhno/photolabs.git
   ```
- or click [Clone](https://github.com/rlakhno/LightBnB) to clone the  repository onto your local device.
 
-2. Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
 
-## [Frontend] Running Webpack Development Server
+***2. Install dependencies with `npm install` in each respective `/frontend` and `/backend`.***
+
+### Frontend: Running Webpack Development Server
 
 ```sh
 cd frontend
 npm start
 ```
 
-## [Backend] Running Backend Servier
-
-Read `backend/readme` for further setup details.
+### Backend: Running Backend Servier
 
 ```sh
 cd backend
 npm start
 ```
 
+### ***IMPORTANT:*** Read `backend/readme` for further setup details.
+
 ## Dependencies
 
 ###   Frontend:
-      - sass: 1.59.2
+- sass: 1.59.2
+
 ###   Backend:
-      - jest: 24.8.0
-      - supertest: 4.0.2
+- jest: 24.8.0
+- supertest: 4.0.2
       
-## proxy
+### proxy
       - proxy: http://localhost:8001
 
 
@@ -65,10 +66,19 @@ npm start
 ## Screenshots of the Final Product
 
 - Main Page
-![Main Page](https://raw.githubusercontent.com/rlakhno/LightBnB/main/LightBnB_WebApp/public/images/main-page.png)
+![Main Page](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/main_page.png)
 
-- Create Listing
-![Create Listing](https://raw.githubusercontent.com/rlakhno/LightBnB/main/LightBnB_WebApp/public/images/create-listing.png)
+- Enlarged Image with Similar Images
+![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/inlarged_picture.png)
+
+- Liked Notification
+![MLiked Notification](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/like_notification.png)
+
+- View by Topic "Travel"
+![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/pics_by_topic_id_travel.png)
+
+- Backend API by Topic id = 3 
+![Enlarged Image](https://github.com/rlakhno/photolabs/blob/main/backend/src/public/images/screenshots/backend_topic_id_3.png)
 
 
 ## API Endpoints
@@ -78,8 +88,10 @@ The application interacts with the following API endpoints:
 - `/api/topics:` GET all topics
 - `/api/topics/photos/:topicId:` GET photos by topic ID
 
+
 ## Project Structure
 
+```
 photolab/
 |--backend/
 |     ├── src/
@@ -125,3 +137,4 @@ photolab/
 |     └── ...
 |
 └── README.md
+```
