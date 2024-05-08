@@ -113,6 +113,7 @@ The application interacts with the following API endpoints:
 - `/api/topics/photos/:topicId:` GET photos by topic ID
 
 
+
 ## Project Structure
 
 ```
