@@ -8,11 +8,11 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import { useFavourites } from '../FavouritesContext';
 
-const HomeRoute = ({ photos, topics,  setPhotoSelected }) => {
+const HomeRoute = ({ photos, topics,  setPhotoSelected, fetchPhotosByTopic }) => {
   const { favourites, addFavourite, removeFavourite } = useFavourites();
   return (
     <div className="home-route">
-      <TopNavigationBar topics={topics} isFavPhotoExist={favourites.length > 0} />
+      <TopNavigationBar topics={topics} isFavPhotoExist={favourites.length > 0} fetchPhotosByTopic={fetchPhotosByTopic}/>
        {/* Passing the context values down as props, which might be unnecessary */}
        <PhotoList
         photos={photos}

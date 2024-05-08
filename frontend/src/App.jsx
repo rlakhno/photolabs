@@ -14,7 +14,7 @@ import './App.scss';
 const App = () => {
   const {
     state,
-    updateToFavPhotoIds,
+    fetchPhotosByTopic,
     setPhotoSelected,
   } = useApplicationData();
 
@@ -28,6 +28,7 @@ const App = () => {
           photos={photos}
           topics={topics}
           setPhotoSelected={setPhotoSelected}
+          fetchPhotosByTopic={fetchPhotosByTopic}
         />
         {!!selectedPhoto && (
           <PhotoDetailsModal
