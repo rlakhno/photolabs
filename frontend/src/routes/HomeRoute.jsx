@@ -9,7 +9,6 @@ import PhotoList from '../components/PhotoList';
 import { useFavourites } from '../FavouritesContext';
 
 const HomeRoute = ({ photos, topics,  setPhotoSelected }) => {
-
   const { favourites, addFavourite, removeFavourite } = useFavourites();
   return (
     <div className="home-route">

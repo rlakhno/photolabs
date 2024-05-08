@@ -19,6 +19,7 @@ const App = () => {
   } = useApplicationData();
 
   const { photos, topics, selectedPhoto } = state;
+  // console.log("App - Photo Data Updated", photos);
 
   return (
     <FavouritesProvider>
