@@ -18,14 +18,19 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite,  setPhot
     }
   };
 
-  const handlePhotoClick = (photoId) => {
-    const photo = photos.find((photo) => photo.id === photoId);
-    // Display modal when a photo is clicked
-    // setDisplayModal(true);
-    setPhotoSelected(photo);
-  }
-  
-  // console.log("PHOTOS: ", photos);
+  // const handlePhotoClick = (photoId) => {
+  //   const photo = photos.find((photo) => photo.id === photoId);
+  //   // Display modal when a photo is clicked
+  //   // setDisplayModal(true);
+  //   setPhotoSelected(photo);
+  // }
+  // Check if photos is an array
+// if (Array.isArray(photos)) {
+//   // If photos is not an array, create a new array with photo.similar_photos
+//   photos = [photos.similar_photos];
+//   console.log("PHOTOS is Array: ", photos);
+// }
+  console.log("PHOTOS: ", photos);
  
   return (
     <ul className="photo-list">
@@ -39,7 +44,9 @@ const PhotoList = ({ photos, favourites, addFavourite, removeFavourite,  setPhot
           profile={item.user.profile}
           isFavourited={favourites.some((favourite) => favourite.id === item.id)}
           onFavouriteToggle={handleFavouriteToggle}
-          onPhotoClick={handlePhotoClick}
+          // onPhotoClick={handlePhotoClick}
+          photo={item} 
+          setPhotoSelected={setPhotoSelected}
         />
       ))}
     </ul>

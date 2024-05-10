@@ -14,7 +14,7 @@ const TopicListItem = ({id, slug, title, fetchPhotosByTopic}) => {
   return (
     <div className="topic-list__item">
       {/* <span> {title} </span> */}
-      <button  onClick={handleClick}>{title}</button>
+      <span  onClick={handleClick}>{title}</span>
     </div>
   );
 };

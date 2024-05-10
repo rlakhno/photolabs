@@ -25,8 +25,11 @@ const PhotoDetailsModal = ({ setPhotoSelected, photos, selectedPhoto }) => {
 
   }
 
- 
-  const valuesArray = Object.values(selectedPhoto.similar_photos);
+
+
+ console.log("selectedPhoto: ", selectedPhoto);
+
+  // const valuesArray = Object.values(selectedPhoto.similar_photos);
  
 
   return (
@@ -66,7 +69,10 @@ const PhotoDetailsModal = ({ setPhotoSelected, photos, selectedPhoto }) => {
           <p>Similar Photos</p>
         </span>
       </div>
-      <PhotoList photos={valuesArray} favourites={favourites} addFavourite={addFavourite} removeFavourite={removeFavourite}/>
+      <PhotoList 
+      photos={selectedPhoto.similar_photos} 
+      // photos={selectedPhoto}
+      favourites={favourites} addFavourite={addFavourite} removeFavourite={removeFavourite} setPhotoSelected={null}/>
     </div>
   )
 };
